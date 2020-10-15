@@ -1,0 +1,9 @@
+1. BC547 transistor
+2. C1815 transistor * 2
+
+
+3. 5v Relay
+Diode 1n 4007 * 2
+capacitor 25v 47uf
+Toroid
+capacitor 25v 470uf
