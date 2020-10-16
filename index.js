@@ -32,12 +32,15 @@ client.connect((err) => {
   const servicesCollection = client
     .db(process.env.DB_NAME)
     .collection("servicesCollection");
-  const worksCollection = client
-    .db(process.env.DB_NAME)
-    .collection("worksCollection");
-  const reviewCollection = client
-    .db(process.env.DB_NAME)
-    .collection("reviewCollection");
+  // currently not functional
+
+  // const worksCollection = client
+  //   .db(process.env.DB_NAME)
+  //   .collection("worksCollection");
+  // const reviewCollection = client
+  //   .db(process.env.DB_NAME)
+  //   .collection("reviewCollection");
+
   const adminCollection = client
     .db(process.env.DB_NAME)
     .collection("adminCollection");
@@ -106,6 +109,7 @@ client.connect((err) => {
   // addFeedback post api
   app.post("/addFeedback", (req, res) => {
     const name = req.body.name;
+    const photoURL = req.body.photoURL;
     const company = req.body.company;
     const description = req.body.description;
     feedbackCollection
@@ -113,6 +117,7 @@ client.connect((err) => {
         name: name,
         company: company,
         description: description,
+        photoURL: photoURL,
       })
       .then(() => {
         res.send("ok");
